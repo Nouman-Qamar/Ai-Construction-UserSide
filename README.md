@@ -1,27 +1,16 @@
-# User Side – Construction Management Platform
+# React + Vite
 
-The User Side is the public-facing interface of the construction management platform, allowing users to explore services, register, and choose their role.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🌐 Features
+Currently, two official plugins are available:
 
-- Landing page introducing the platform
-- Role-based registration (Client, Contractor, Labour)
-- Secure login and authentication
-- Service overview and platform workflow
-- Contact and support access
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 👥 Target Users
-- New platform users
-- Clients
-- Contractors
-- Labour
+## React Compiler
 
-## 🎨 UI & Design
-- Modern and professional design
-- Clean white theme
-- Simple navigation and clear CTAs
-- Responsive layout for all devices
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📌 Purpose
-This module serves as the entry point of the system, guiding users to register, understand platform features, and access their respective dashboards.
+## Expanding the ESLint configuration
 
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
