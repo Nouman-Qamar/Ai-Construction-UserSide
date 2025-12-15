@@ -1,42 +1,82 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.header{
+  height: 70px;
+  padding: 0 24px;
+  background: #FFF9F2;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   
+  width: 100%;                      
+  box-sizing: border-box; 
+  border-bottom: 1px solid #FFE4C7; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.content{
+  margin: 24px 16px;
+  padding: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.sider{
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #FFF9F2;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.trigger{
+  font-size: 16px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
 }
 
-.card {
-  padding: 2em;
+
+.logo{
+  color: #5C2A0A;         
+  margin: 30px 0;
+  font-size: 1.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+
+.menu-bar{
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  font-weight: 500;
+  background: #FFF9F2 !important;
+}
+
+
+.ant-menu-item-selected{
+  background-color: #F97316 !important; 
+  color: #fff !important;               
+  border-radius: 6px;
+}
+
+/* MENU ITEM HOVER */
+.ant-menu-item:hover{
+  background-color: #FFE4C7 !important;  
+  color: #5C2A0A !important;           
+}
+
+
+.ant-menu-item{
+  color: #5C2A0A !important;
+}
+
+
+.header-icon{
+  background: #FFE4C7;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #5C2A0A;
 }
