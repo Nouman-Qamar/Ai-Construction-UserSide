@@ -1,0 +1,130 @@
+.form-container {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #d35400;
+}
+
+.subtitle {
+  color: #e67e22;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  margin: 35px 0 15px;
+  color: #d35400;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #d35400;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #f5b78c;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #e67e22;
+}
+
+input:disabled {
+  background: #f2f2f2;
+}
+
+.icon-input {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 36px;
+  left: 10px;
+}
+
+.icon-input input {
+  padding-left: 34px;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+}
+
+.check-item,
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #d35400;
+}
+
+.check-item input,
+.radio-item input {
+  accent-color: #e67e22;
+}
+
+.upload-box {
+  border: 2px dashed #f5b78c;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 32px;
+}
+
+.uploaded-files label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.file-item {
+  background: #fff3e8;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.file-item button {
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+}
