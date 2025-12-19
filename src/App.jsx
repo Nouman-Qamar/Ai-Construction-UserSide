@@ -7,17 +7,19 @@ import FormFields from "./components/formfield/FormFields";
 
 function App() {
   return (
-    <div className="app">
-      {/* Navbar always visible */}
+    <div className="app-layout">
+      
       <Navbar />
 
-      {/* Page routing */}
-      <Routes>
-        <Route path="/" element={<div />} />
-        <Route path="/formfields" element={<FormFields />} />
-      </Routes>
+     
+      <main className="app-content">
+        <Routes>
+          
+          {/* <Route path="/formfields" element={<FormFields />} /> */}
+        </Routes>
+      </main>
 
-      {/* Footer always visible */}
+     
       <Footer />
     </div>
   );
