@@ -1,15 +1,29 @@
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import './App.css'
-import Footer from './components/Footer'
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import FormFields from "./Components/formfield/FormFields";
+
 
 function App() {
   return (
-    <div className="app">
+    <div className="app-layout">
+     
       <Navbar />
+
+      
+      {/* <main className="app-content">
+        <Routes>
+          
+          <Route path="/formfields" element={<FormFields />} />
+        </Routes>
+      </main> */}
+
+     {/* <FormFields /> */}
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

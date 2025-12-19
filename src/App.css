@@ -1,32 +1,4 @@
 
-.header{
-  height: 70px;
-  padding: 0 24px;
-  background: #FFF9F2;  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;   
-  width: 100%;                      
-  box-sizing: border-box; 
-  border-bottom: 1px solid #FFE4C7; 
-}
-
-
-.content{
-  margin: 24px 16px;
-  padding: 20px;
-}
-
-
-.sider{
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background: #FFF9F2;    
-}
-
 
 .trigger{
   font-size: 16px;
@@ -38,11 +10,6 @@
 }
 
 
-.logo{
-  color: #5C2A0A;         
-  margin: 30px 0;
-  font-size: 1.5rem;
-}
 
 
 .menu-bar{
