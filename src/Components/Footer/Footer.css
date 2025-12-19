@@ -43,23 +43,109 @@
   margin-bottom: 1rem;
 }
 
-.socials { display:flex; gap:0.5rem }
-.social {
-  width:32px; height:32px; background: rgba(255,255,255,0.06);
-  border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
-  color:#ffd9c9; font-weight:600
+.socials {
+  display: flex;
+  gap: 8px;
 }
 
-.footer-col ul { list-style:none; padding:0; margin:0; color:#ffdccf }
-.footer-col li { margin:0.55rem 0 }
+.social {
+  width: 32px;
+  height: 32px;
+  background: #ffffff10;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd9c9;
+}
 
-.contact .contact-item { color:#ffdccf; margin:0.5rem 0 }
 
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); margin-top:1.5rem; padding:1rem 0 }
-.bottom-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; color:#f0d2c4 }
-.bottom-links { opacity:0.9 }
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #ffdccf;
+}
+
+.footer-col li {
+  margin: 8px 0;
+}
+
+
+.contact .contact-item {
+  color: #ffdccf;
+  margin: 6px 0;
+}
+
+
+.footer-bottom {
+  border-top: 1px solid #ffffff10;
+  margin-top: 24px;
+  padding: 16px 0;
+}
+
+.bottom-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  color: #f0d2c4;
+}
+
+.bottom-links {
+  opacity: 0.9;
+}
+
 
 @media (max-width: 900px) {
-  .footer-inner { grid-template-columns: 1fr; }
-  .bottom-inner { flex-direction:column; gap:0.75rem; align-items:center }
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+}
+
+
+
+.site-footer a {
+  color: #ffdccf;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #ffb28a;
+  transform: translateX(3px);
+}
+
+/* LIST ITEMS – subtle hover feel */
+.footer-col li:hover {
+  color: #ffb28a;
+}
+
+/* SOCIAL ICONS */
+.social {
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.social:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* BOTTOM LINKS HOVER */
+.bottom-links a:hover {
+  color: #ffffff;
+}
+
+/* ACCESSIBILITY: focus for keyboard users */
+.site-footer a:focus-visible {
+  outline: 2px solid #ff8a34;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
