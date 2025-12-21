@@ -3,6 +3,7 @@
 import React, { useState } from "react"
 import "./FormFields.css"
 import { Search, Mail, Calendar, FileText, X } from "lucide-react"
+import Button, { ButtonExamples } from "../Button/Button"
 
 export default function FormFields() {
   const [projectName, setProjectName] = useState("123")
@@ -263,6 +264,9 @@ export default function FormFields() {
           ))}
         </div>
       </div>
+
+      {/* BUTTON EXAMPLES */}
+      <ButtonExamples />
     </div>
   )
 }
