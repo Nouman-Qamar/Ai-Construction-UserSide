@@ -1,9 +1,9 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"
+import Navbar from "./Components/Navbar/Navbar.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
+import FormFields from "./Components/FormField/FormFields.jsx";
 
-import Navbar from "./Components/Navbar/Navbar";
-import Footer from "./Components/Footer/Footer";
-import FormFields from "./Components/FormField/FormFields";
+
 
 
 function App() {
@@ -12,15 +12,7 @@ function App() {
      
       <Navbar />
 
-      
-      {/* <main className="app-content">
-        <Routes>
-          
-          <Route path="/formfields" element={<FormFields />} />
-        </Routes>
-      </main> */}
 
-     <FormFields />
       <Footer />
     </div>
   );
