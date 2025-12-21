@@ -1,10 +1,5 @@
-import React from "react";
-import CardTables from "../components/card/card";
+import Card from "../Cardpage/Card";
 
 export default function CardsPage() {
-  return (
-    <div>
-      <CardTables />
-    </div>
-  );
+  return <Card />;
 }

@@ -1,32 +1,148 @@
+.card-wrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-header span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
 .card-table {
+  width: 100%;
   border-collapse: collapse;
+  font-size: 14px;
 }
 
 .card-table th,
 .card-table td {
-  white-space: nowrap;
-  padding: 0.5rem;
-  vertical-align: middle;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
 }
 
-.card-table thead th {
-  letter-spacing: 0.2px;
+.card-table th {
   font-weight: 600;
+  color: #374151;
+}
+
+.project-name {
+  font-weight: 500;
+}
+
+.project-id {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .progress-fill {
-  transition: width 0.5s ease;
   height: 100%;
-  border-radius: 0.25rem;
+  transition: width 0.5s ease;
 }
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  display: inline-block;
-  margin-right: 8px;
-  vertical-align: middle;
+.progress-fill.orange {
+  background: #f97316;
+}
+
+.progress-fill.yellow {
+  background: #eab308;
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.status-badge.green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-badge.yellow {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+.status-badge.blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.alerts-list {
+  display: grid;
+  gap: 12px;
+}
+
+.alert-card {
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid;
+}
+
+.alert-card.high {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.alert-card.medium {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #c2410c;
+}
+
+.alert-card p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.alert-icon {
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 @media (max-width: 640px) {
@@ -34,4 +150,16 @@
   .card-table td {
     white-space: normal;
   }
+}
+
+.overview-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.overview-btn:hover {
+  text-decoration: underline;
 }
