@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import FormFields from "./Components/formfield/FormFields";
+import FormFields from "./Components/FormField/FormFields";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         </Routes>
       </main> */}
 
-     {/* <FormFields /> */}
+     <FormFields />
       <Footer />
     </div>
   );
