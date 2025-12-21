@@ -15,17 +15,19 @@ function App() {
     <div className="app-layout">
      
       <Navbar />
-      {/* <main className="app-content">
+      <main className="app-content">
         <Routes>
+          {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} /> */}
+
+                              {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka dena  */}
         </Routes>
-      </main> */}
+      </main>
 
-      {/* <ButtonExamples/> */}
-
-      {/* <CardsPage/> */}
-
-      <Modalmenu/>
+      
 
       <Footer />
     </div>
