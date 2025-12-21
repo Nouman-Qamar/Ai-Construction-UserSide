@@ -11,7 +11,6 @@ function App() {
     <div className="app-layout">
      
       <Navbar />
-
       
       {/* <main className="app-content">
         <Routes>
