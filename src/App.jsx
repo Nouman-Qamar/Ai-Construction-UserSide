@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} /> */}
 
-                              {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka dena  */}
+                              {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka denaa*/}
         </Routes>
       </main>
 
