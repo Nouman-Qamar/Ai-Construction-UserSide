@@ -15,8 +15,13 @@ function App() {
       
       <main className="app-content">
         <Routes>
-          
-          <Route path="/formfields" element={<FormFields />} />
+          {/* <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} /> */}
+
+                              {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka denaa*/}
         </Routes>
       </main>
 
