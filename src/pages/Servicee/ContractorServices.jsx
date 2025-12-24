@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { servicesConfig } from "./servicesData";
+import { servicesConfig } from "./ServicesData";
 import "./services.css";
 
 export default function ContractorServices() {

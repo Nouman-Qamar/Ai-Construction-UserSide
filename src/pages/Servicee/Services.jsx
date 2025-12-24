@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./services.css";
-import { servicesConfig } from "./servicesData";
+import { servicesConfig } from "./ServicesData";
 import Modal from "./modal"; // Import Modal component
 
 export default function Services() {
