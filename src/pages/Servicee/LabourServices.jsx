@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { servicesConfig } from "./ServicesData";
-import "./services.css";
+import "./Services.css";
 
 export default function LabourServices() {
   const [info, setInfo] = useState(null);

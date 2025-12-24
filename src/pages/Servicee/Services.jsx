@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./services.css";
+import "./Services.css";
 import { servicesConfig } from "./ServicesData";
-import Modal from "./modal"; // Import Modal component
+import Modal from "./modul"; // Import Modal component
 
 export default function Services() {
   const navigate = useNavigate();
@@ -86,6 +86,13 @@ export default function Services() {
 
       {/* Modal for Sign Up as Client, Contractor, or Labour */}
       <Modal isOpen={isModalOpen} onClose={closeModal} role={role} />
+     
+
     </div>
+    
+
   );
+
+
+
 }
