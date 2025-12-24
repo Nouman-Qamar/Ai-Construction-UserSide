@@ -25,7 +25,24 @@ function App() {
         </Routes>
       </main>
 
-     <FormFields />
+
+      <FormFields />
+
+
+       {/* yh Button component ha uncomment krka chala kr dekhlo */}
+           {/* <ButtonExamples /> */}
+
+       {/* yh card component ha uncomment krka chala kr dekhlo */}
+           {/* <CardsPage /> */}
+
+      {/* yh Modal component ha uncomment krka chala kr dekhlo */}
+            {/* <Modalmenu /> */}
+
+      {/* yh FormFields component ha uncomment krka chala kr dekhlo */}
+             {/* <FormFields />         */}
+
+      
+
       <Footer />
     </div>
   );
