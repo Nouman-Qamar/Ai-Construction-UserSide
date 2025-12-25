@@ -14,10 +14,11 @@ const Navbar = () => {
   const pathname = location.pathname
 
   const navItems = [
-    { name: "Dashboard", path: "/dashboard" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contractors", path: "/contractors" },
-    { name: "Reports", path: "/reports" },
+    { name: "Home", path: "/" },
+    { name: "How It Works", path: "/how-it-works" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ]
 
   const quickActions = [
