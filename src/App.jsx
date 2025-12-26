@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <main className="app-content">
         <Routes>
-          {<Route path="/"element={<Login/>}/>}
+          {<Route path="/login"element={<Login/>}/>}
           {<Route path="/signup"element={<Signup/>}/>}
           {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />

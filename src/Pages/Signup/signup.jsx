@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Card, Radio, Checkbox, message } from "antd";
 import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
@@ -9,15 +10,12 @@ const Signup = () => {
   const onFinish = (values) => {
     console.log(values);
 
-    message.success(
-      `Account created successfully as ${role.toUpperCase()} 🎉`
-    );
+    message.success(`Account created successfully as ${role.toUpperCase()} 🎉`);
   };
 
   return (
     <div className="signup-wrapper">
       <div className="signup-box">
-      
         <div className="signup-image">
           <div className="image-overlay">
             <h2>Join Our Construction Platform</h2>
@@ -28,15 +26,11 @@ const Signup = () => {
           </div>
         </div>
 
-        
         <div className="signup-form-section">
           <Card className="signup-card">
             <h2 className="signup-title">Create Account</h2>
-            <p className="signup-subtitle">
-              Register to get started
-            </p>
+            <p className="signup-subtitle">Register to get started</p>
 
-          
             <Radio.Group
               value={role}
               onChange={(e) => setRole(e.target.value)}
@@ -51,9 +45,7 @@ const Signup = () => {
               <Form.Item
                 label="Full Name"
                 name="name"
-                rules={[
-                  { required: true, message: "Name is required" },
-                ]}
+                rules={[{ required: true, message: "Name is required" }]}
               >
                 <Input
                   size="large"
@@ -132,7 +124,8 @@ const Signup = () => {
                 ]}
               >
                 <Checkbox>
-                  I agree to the <span className="terms">Terms & Conditions</span>
+                  I agree to the{" "}
+                  <span className="terms">Terms & Conditions</span>
                 </Checkbox>
               </Form.Item>
 
@@ -145,7 +138,13 @@ const Signup = () => {
               >
                 Create Account
               </Button>
+
+             
             </Form>
+
+            <p className="signup-link">
+              Already have an account? <Link to="/login">Login here</Link>
+            </p>
           </Card>
         </div>
       </div>

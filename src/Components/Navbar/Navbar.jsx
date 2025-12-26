@@ -90,9 +90,12 @@ const Navbar = () => {
             )}
           </div>
 
-          
-
-          
+          <div className="auth-links">
+            
+            <Link to="/signup" className="signup-btn">
+             Login / Sign Up
+            </Link>
+          </div>
         </div>
       </div>
     </div>
