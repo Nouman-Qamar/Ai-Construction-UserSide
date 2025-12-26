@@ -78,7 +78,7 @@
 }
 
 .signup-btn:hover {
-  background: #e66a10;
+  background: #e66a10 !important;
   border-color: #e66a10;
   box-shadow: 0 4px 12px rgba(255,122,24,0.3);
 }
