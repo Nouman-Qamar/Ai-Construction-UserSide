@@ -17,7 +17,7 @@ const Signup = () => {
   return (
     <div className="signup-wrapper">
       <div className="signup-box">
-        {/* LEFT IMAGE */}
+      
         <div className="signup-image">
           <div className="image-overlay">
             <h2>Join Our Construction Platform</h2>
@@ -28,7 +28,7 @@ const Signup = () => {
           </div>
         </div>
 
-        {/* RIGHT FORM */}
+        
         <div className="signup-form-section">
           <Card className="signup-card">
             <h2 className="signup-title">Create Account</h2>
@@ -36,7 +36,7 @@ const Signup = () => {
               Register to get started
             </p>
 
-            {/* ROLE SELECTION */}
+          
             <Radio.Group
               value={role}
               onChange={(e) => setRole(e.target.value)}

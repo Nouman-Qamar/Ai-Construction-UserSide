@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className="login-wrapper">
       <div className="login-box">
-        {/* LEFT IMAGE SECTION */}
+    
         <div className="login-image">
           <div className="image-overlay">
             <h2>Build Smarter, Together</h2>
@@ -52,7 +52,7 @@ const Login = () => {
           </div>
         </div>
 
-        {/* RIGHT FORM SECTION */}
+     
         <div className="login-form-section">
           <Card className="login-card">
             <h2 className="login-title">Welcome Back!</h2>
@@ -60,7 +60,6 @@ const Login = () => {
               Sign in to continue
             </p>
 
-            {/* ROLE SELECTION */}
             <Radio.Group
               value={role}
               onChange={(e) => setRole(e.target.value)}
@@ -144,7 +143,7 @@ const Login = () => {
                 Login
               </Button>
 
-              {/* SIGNUP LINK */}
+              
               <p className="signup-link">
                 Don’t have an account?{" "}
                 <Link to="/signup">Create one</Link>
@@ -154,7 +153,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* FORGOT PASSWORD MODAL */}
+     
       <Modal
         title="Reset Password"
         open={forgotOpen}
