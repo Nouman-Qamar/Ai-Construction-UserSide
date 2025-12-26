@@ -39,9 +39,7 @@ function App() {
       {/* yh FormFields component ha uncomment krka chala kr dekhlo */}
              {/* <FormFields />         */}
 
-      
-
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
