@@ -7,6 +7,7 @@ import CardsPage from "./Components/Cardpage/Cardpage.jsx";
 import Modalmenu from "./Components/Model/model.jsx";
 import Login from "./Pages/Login/login.jsx";
 import Signup from "./Pages/Signup/signup.jsx";
+import About from "./Pages/About/about.jsx";
 
 
 
@@ -21,8 +22,8 @@ function App() {
         <Routes>
           {<Route path="/login"element={<Login/>}/>}
           {<Route path="/signup"element={<Signup/>}/>}
+          {<Route path="/about"element={< About/>}/>}
           {/* <Route path="/" element={<FormFields />} />
-          <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} /> */}
