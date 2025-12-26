@@ -18,14 +18,18 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Contractors", path: "/contractors" },
     { name: "Reports", path: "/reports" },
+    
   ]
 
   const quickActions = [
     { name: "New Project", icon: FaPlus, path: "/projects/new" },
     { name: "Time Entry", icon: MdTimer, path: "/time-tracking" },
     { name: "Documents", icon: FaFileAlt, path: "/documents" },
+
   ]
 
+ 
+ 
   return (
     <div className="bp-card">
       <div className="navbar admin">

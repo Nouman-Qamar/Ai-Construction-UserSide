@@ -5,6 +5,8 @@ import FormFields from "./Components/FormField/FormFields.jsx";
 import { ButtonExamples } from "./Components/Button/Button.jsx";
 import CardsPage from "./Components/Cardpage/Cardpage.jsx";
 import Modalmenu from "./Components/Model/model.jsx";
+import Login from "./Pages/Login/login.jsx";
+import Signup from "./Pages/Signup/signup.jsx";
 
 
 
@@ -17,6 +19,8 @@ function App() {
       <Navbar />
       <main className="app-content">
         <Routes>
+          {<Route path="/"element={<Login/>}/>}
+          {<Route path="/signup"element={<Signup/>}/>}
           {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
