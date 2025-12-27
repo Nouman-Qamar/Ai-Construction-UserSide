@@ -8,6 +8,7 @@ import Modalmenu from "./Components/Model/model.jsx";
 import Login from "./Pages/Login/login.jsx";
 import Signup from "./Pages/Signup/signup.jsx";
 import About from "./Pages/About/about.jsx";
+import Work from "./Pages/How-It-Works/work.jsx";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           {<Route path="/login"element={<Login/>}/>}
           {<Route path="/signup"element={<Signup/>}/>}
           {<Route path="/about"element={< About/>}/>}
+          {<Route path="/how-it-works"element={< Work/>}/>}
           {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
@@ -44,7 +46,7 @@ function App() {
       {/* yh FormFields component ha uncomment krka chala kr dekhlo */}
              {/* <FormFields />         */}
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

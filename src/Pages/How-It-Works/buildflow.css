@@ -1,0 +1,553 @@
+/* How It Works Page Styles */
+
+.how-it-works-container {
+  width: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 100px 40px 60px 40px;
+  background: linear-gradient(135deg, #ff9a3c 0%, #1e40af 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 30px auto 0;
+  border-radius: 2px;
+}
+
+/* Steps Section */
+.steps-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.steps-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.steps-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+.steps-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  position: relative;
+}
+
+.step-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.connecting-line {
+  position: absolute;
+  height: 3px;
+  top: 80px;
+  left: 100%;
+  width: 20px;
+  z-index: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .connecting-line {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .connecting-line {
+    width: calc((100% - 280px) / 2);
+  }
+}
+
+.step-card {
+  height: 100%;
+  border: 2px solid #e5e7eb;
+  border-top: 5px solid;
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.step-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+}
+
+.step-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.step-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.step-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Added step icon container with better styling */
+.step-icon-container {
+  font-size: 56px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.step-icon-container svg {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-icon-container svg {
+  transform: scale(1.1);
+}
+
+.step-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  letter-spacing: -0.3px;
+}
+
+.step-description {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6b7280;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+}
+
+/* Improved highlight section styling */
+.step-highlight {
+  border-left: 4px solid;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.highlight-icon {
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.highlight-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Roles Section */
+.roles-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.roles-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.roles-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+.roles-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 24px 0;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7a18, #2563eb, #10b981);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.role-card {
+  border: 2px solid #e5e7eb;
+  border-top: 5px solid;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.role-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+}
+
+/* Redesigned role header with icon and title alignment */
+.role-header {
+  padding: 36px 32px 24px 32px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.role-icon-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  font-size: 32px;
+  background: transparent;
+  box-shadow: 0 6px 18px rgba(159, 98, 28, 0.06);
+}
+
+.role-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.role-features {
+  padding: 36px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Enhanced feature items with better icon styling */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.feature-check-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-text {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* CTA Section */
+.cta-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 80px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #ff7a18 0%, #ff9541 100%);
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(255, 122, 24, 0.2);
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Added emoji icon to CTA section */
+.cta-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cta-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  margin: 0 0 40px 0;
+  opacity: 0.95;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: inline-flex;                /* ✅ REQUIRED for Link */
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgb(172, 92, 25),
+    rgb(212, 113, 36)
+  );
+  color: #ede3db;
+
+  text-decoration: none;               /* ✅ remove link underline */
+  border: none;
+  border-radius: 10px;
+
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-shadow: 0 8px 24px rgba(125, 95, 12, 0.15);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(226, 161, 112, 0.25);
+  color: #ffffff;                     
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(125, 95, 12, 0.2);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 24px 50px 24px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .steps-section {
+    padding: 80px 24px;
+  }
+
+  .steps-header {
+    margin-bottom: 50px;
+  }
+
+  .steps-title {
+    font-size: 32px;
+  }
+
+  .steps-grid {
+    gap: 24px;
+  }
+
+  .step-card {
+    padding: 32px 24px;
+  }
+
+  .step-icon-container {
+    font-size: 48px;
+    height: 70px;
+  }
+
+  .step-icon-container svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .roles-section {
+    padding: 80px 24px;
+  }
+
+  .roles-title {
+    font-size: 32px;
+  }
+
+  .roles-grid {
+    gap: 24px;
+  }
+
+  .role-card {
+    border-radius: 12px;
+  }
+
+  .role-header {
+    padding: 28px 24px 20px 24px;
+  }
+
+  .role-features {
+    padding: 28px 24px;
+    gap: 16px;
+  }
+
+  .cta-section {
+    padding: 60px 24px;
+    margin: 60px 24px;
+    border-radius: 16px;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .feature-item {
+    gap: 12px;
+  }
+}
