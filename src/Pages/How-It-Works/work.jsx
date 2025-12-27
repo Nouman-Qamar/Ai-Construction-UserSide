@@ -1,233 +1,227 @@
-import { Card, Tag } from "antd";
-import logo from "./images/profilepic.png"
-import client from "./images/clinet.png"
-import contractor from "./images/contractor.png"
-import Labour from "./images/labour.png"
-import Post from "./images/postorapply.png"
-import track from "./images/track.png"
-import "./work.css";
-function Work() {
+import { Card } from "antd";
+import { Link } from "react-router-dom";
+import {
+  UserOutlined,
+  AimOutlined,
+  FileTextOutlined,
+  DollarOutlined,
+  CheckCircleOutlined,
+} from "@ant-design/icons";
+import "./buildflow.css";
+
+export default function HowItWorks() {
+  const steps = [
+    {
+      number: 1,
+      title: "Create Your Account",
+      description:
+        "Create your free account in minutes. Quick and simple registration process with no hidden fees.",
+      icon: UserOutlined,
+      details: "Secure & easy signup",
+      color: "#ff7a18",
+    },
+    {
+      number: 2,
+      title: "Choose Your Role",
+      description:
+        "Select whether you're a Client, Contractor, or Labour member joining our platform.",
+      icon: AimOutlined, // ✅ FIXED (TargetOutlined ❌)
+      details: "Define your position",
+      color: "#2563eb",
+    },
+    {
+      number: 3,
+      title: "Post or Apply",
+      description:
+        "Clients post projects. Contractors and Labour browse and apply for jobs that match their skills.",
+      icon: FileTextOutlined,
+      details: "Find perfect matches",
+      color: "#10b981",
+    },
+    {
+      number: 4,
+      title: "Track & Get Paid",
+      description:
+        "Monitor progress in real-time. Secure payment processing ensures everyone gets paid on time.",
+      icon: DollarOutlined,
+      details: "Safe & timely payments",
+      color: "#8b5cf6",
+    },
+  ];
+
+  const roles = [
+    {
+      title: "For Client",
+      color: "#ff7a18",
+      icon: "👷",
+      features: [
+        "Post your construction project",
+        "Review contractor proposals",
+        "Select the best fit",
+        "Track project progress",
+        "Release payments securely",
+      ],
+    },
+    {
+      title: "For Contractor",
+      color: "#2563eb",
+      icon: "🔨",
+      features: [
+        "Browse available projects",
+        "Submit competitive bids",
+        "Get hired by clients",
+        "Manage project delivery",
+        "Receive secure payments",
+      ],
+    },
+    {
+      title: "For Labour",
+      color: "#10b981",
+      icon: "🛠️",
+      features: [
+        "Search job opportunities",
+        "Apply with your profile",
+        "Connect with contractors",
+        "Complete assigned work",
+        "Get paid promptly",
+      ],
+    },
+  ];
+
   return (
-    <div>
-      <div className="parent">
-        <div>
-          <h1 className="heading">How BuildFlow Works</h1>
+    <main className="how-it-works-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">How BuildFlow Works</h1>
+          <p className="hero-subtitle">
+            Get started in 4 simple steps and transform the way you manage
+            construction projects
+          </p>
+          <div className="hero-divider"></div>
         </div>
-        <div className="heading-content">
-          Get started in 4 simple steps and transform the way you manage
-          construction projects
-        </div>
-      </div>
-      {/* 1st card */}
-      <div className="cardparent">
-        <Card className="carditem">
-          <div className="card-parent">
-            <div>
-              <div className="card-parent">
-                <button className="circle">1</button>
-                <Tag
-                  style={{
-                    background: "#bfbebeff",
-                    color: "white",
-                    borderRadius: "0px 12px 12px  0px",
-                    height: "25px",
-                    fontSize: "15px",
-                    alignContent: "center",
-                  }}
-                >
-                  1 of 4
-                </Tag>
-              </div>
-              <div className="createacount"> Create Your account</div>
-              <div className="createcontent">
-                Create your free account in minutes. Quick and simple
-                registration process with no hidden fees.
-              </div>
-              <button className="button"> GET STARTED</button>
-            </div>
-            <div className="cardfix">
-              <Card className="card">
-                <div>
-                  <img src={logo} alt="Profile" />
-                </div>
-                <div className="cardheading">Quick Registration</div>
-                <div className="createcontent">
-                  Secure & easy signup process
-                </div>
-              </Card>
-            </div>
-          </div>
-        </Card>
-      </div>
-      {/* 2nd card */}
-      <div className="cardparent">
-        <Card className="carditem">
-          <div className="card-parent">
-            <div>
-              <div className="card-parent">
-                <button className="circle2">2</button>
-                <Tag
-                  style={{
-                    background: "#bfbebeff",
-                    color: "white",
-                    borderRadius: "0px 12px 12px  0px",
-                    height: "25px",
-                    fontSize: "15px",
-                    alignContent: "center",
-                  }}
-                >
-                  2 of 4
-                </Tag>
-              </div>
-              <div className="createacount"> Chose your Role</div>
-              <div className="createcontent">
-                Select whether you're a Client posting projects, a Contractor
-                building on work ,or a Labour seeking opportunities.
-              </div>
-            </div>
-            <div>
-              <div>
-                <div className="triplecard">
-                  <Card className="tripplecardfix">
-                    <div>
-                      <img src={client} alt="client" />
-                    </div>
-                    <div className="cardheading">Client</div>
-                    <div className="createcontent">Post Project</div>
-                  </Card>
-                  <Card className="tripplecardfix">
-                    <div>
-                      <img src={contractor} alt="Profile" />
-                    </div>
-                    <div className="cardheading">Contractor</div>
-                    <div className="createcontent">Bid on Work</div>
-                  </Card>
-                  <Card className="tripplecardfix">
-                    <div>
-                      <img src={Labour} alt="Profile" />
-                    </div>
-                    <div className="cardheading"> Labour</div>
-                    <div className="createcontent">Find opportunities</div>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
-      {/* 3rd card */}
-      <div className="cardparent">
-        <Card className="carditem">
-          <div className="card-parent">
-            <div>
-              <div className="card-parent">
-                <button className="circle">3</button>
-                <Tag
-                  style={{
-                    background: "#bfbebeff",
-                    color: "white",
-                    borderRadius: "0px 12px 12px  0px",
-                    height: "25px",
-                    fontSize: "15px",
-                    alignContent: "center",
-                  }}
-                >
-                  3 of 4
-                </Tag>
-              </div>
-              <div className="createacount"> Post or Apply</div>
-              <div className="createcontent">
-                Client post deatailed project requirements.Contractor and Labour
-                browse and apply for jobs that much their skills.
-              </div>
-            </div>
-            <div className="cardfix">
-              <Card className="card">
-                <div>
-                  <img src={Post} alt="Profile" />
-                </div>
-                <div className="cardheading">Post or Apply</div>
-              </Card>
-            </div>
-          </div>
-        </Card>
-      </div>
-      {/* 4th card */}
-      <div className="cardparent">
-        <Card className="carditem">
-          <div className="card-parent">
-            <div>
-              <div className="card-parent">
-                <button className="circle2">4</button>
-                <Tag
-                  style={{
-                    background: "#bfbebeff",
-                    color: "white",
-                    borderRadius: "0px 12px 12px  0px",
-                    height: "25px",
-                    fontSize: "15px",
-                    alignContent: "center",
-                  }}
-                >
-                  4 of 4
-                </Tag>
-              </div>
-              <div className="createacount"> Track And Get Paid</div>
-              <div className="createcontent">
-                Monitor project progress with real-time updates. Secure payment
-                processing ensures everyone gets paid on time.
-              </div>
-            </div>
-            <divc className="cardfix">
-              <Card className="card">
-                <div>
-                  <img src={track} alt="Profile" />
-                </div>
-                <div className="cardheading">Track And Get Paid</div>
-              </Card>
-            </divc>
-          </div>
-        </Card>
-        <div className="parent">
-          <div>
-            <h1 className="heading">Tailored Experience for Every Role</h1>
-          </div>
-          <div className="heading-content">
-            Each user type gets a customized workflow designed for their needs
-          </div>
-        </div>
-      </div>
-      <div className="cardheader">
-        <Card style={{ width: "33%", margin: "20px" }}>
-          <button className="button2"> For Client</button>
-          <div className="lastcard"> Post your construction project </div>
-          <div className="lastcard">Review contractor proposals</div>
-          <div className="lastcard">Select the best fit</div>
-          <div className="lastcard">Track project progress</div>
-          <div className="lastcard"> Release payments securely</div>
-        </Card>
+      </section>
 
-        <Card style={{ width: "33%", margin: "20px" }}>
-          <button className="button2-1"> For Contructor</button>
-          <div className="lastcard"> Browse available projects </div>
-          <div className="lastcard">Submit competitive bids</div>
-          <div className="lastcard">Get hired by clients</div>
-          <div className="lastcard"> Manage project delivery</div>
-          <div className="lastcard"> Receive secure payments</div>
-        </Card>
+      {/* Steps Section */}
+      <section className="steps-section">
+        <div className="steps-header">
+          <h2 className="steps-title">Our Simple 4-Step Process</h2>
+          <p className="steps-subtitle">Easy workflow from signup to payment</p>
+        </div>
 
-        <Card style={{ width: "33%", margin: "20px" }}>
-          <button className="button2"> For Labour</button>
-          <div className="lastcard"> Search job opportunities</div>
-          <div className="lastcard">Apply with your profile</div>
-          <div className="lastcard">Connect with contractors</div>
-          <div className="lastcard">Complete assigned work</div>
-          <div className="lastcard"> Get paid promptly</div>
-        </Card>
-      </div>
-    </div>
+        <div className="steps-grid">
+          {steps.map((step, index) => {
+            const IconComponent = step.icon;
+            return (
+              <div key={step.number} className="step-wrapper">
+                {index < steps.length - 1 && (
+                  <div
+                    className="connecting-line"
+                    style={{ backgroundColor: step.color }}
+                  />
+                )}
+
+                <Card
+                  className="step-card"
+                  style={{ borderTopColor: step.color }}
+                >
+                  <div className="step-number-wrapper">
+                    <div
+                      className="step-number"
+                      style={{ backgroundColor: step.color }}
+                    >
+                      {step.number}
+                    </div>
+                    <div className="step-tag">Step {step.number}</div>
+                  </div>
+
+                  <div
+                    className="step-icon-container"
+                    style={{ color: step.color }}
+                  >
+                    <IconComponent />
+                  </div>
+
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-description">{step.description}</p>
+
+                  <div
+                    className="step-highlight"
+                    style={{
+                      backgroundColor: `${step.color}15`,
+                      borderLeftColor: step.color,
+                    }}
+                  >
+                    <span
+                      className="highlight-icon"
+                      style={{ color: step.color }}
+                    >
+                      ►
+                    </span>
+                    <span className="highlight-text">{step.details}</span>
+                  </div>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Roles Section */}
+      <section className="roles-section">
+        <div className="roles-header">
+          <h2 className="roles-title">Tailored Experience for Every Role</h2>
+          <p className="roles-subtitle">
+            Each user type gets a customized workflow designed for their unique
+            needs
+          </p>
+          <div className="section-divider"></div>
+        </div>
+
+        <div className="roles-grid">
+          {roles.map((role) => (
+            <Card
+              key={role.title}
+              className="role-card"
+              style={{ borderTopColor: role.color }}
+            >
+              <div className="role-header">
+                <div className="role-icon-large">{role.icon}</div>
+                <h3 className="role-title" style={{ color: role.color }}>
+                  {role.title}
+                </h3>
+              </div>
+
+              <div className="role-features">
+                {role.features.map((feature, idx) => (
+                  <div key={idx} className="feature-item">
+                    <div className="feature-check-wrapper">
+                      <CheckCircleOutlined
+                        style={{ color: role.color, fontSize: 18 }}
+                      />
+                    </div>
+                    <span className="feature-text">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <div className="cta-content">
+          <div className="cta-icon">🚀</div>
+          <h2 className="cta-title">Ready to Get Started?</h2>
+          <p className="cta-subtitle">
+            Join thousands of construction professionals using BuildFlow
+          </p>
+          <Link to="/signup" className="cta-button">
+            Start Your Free Account Today
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
-export default Work;
-
- 
