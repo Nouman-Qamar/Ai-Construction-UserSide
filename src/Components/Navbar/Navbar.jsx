@@ -17,15 +17,19 @@ const Navbar = () => {
     { name: "Dashboard", path: "/dashboard" },
     { name: "Projects", path: "/projects" },
     { name: "Contractors", path: "/contractors" },
-    { name: "Reports", path: "/reports" },
+    { name: "About", path: "/about" },
+    
   ]
 
   const quickActions = [
     { name: "New Project", icon: FaPlus, path: "/projects/new" },
     { name: "Time Entry", icon: MdTimer, path: "/time-tracking" },
     { name: "Documents", icon: FaFileAlt, path: "/documents" },
+
   ]
 
+ 
+ 
   return (
     <div className="bp-card">
       <div className="navbar admin">
@@ -86,9 +90,12 @@ const Navbar = () => {
             )}
           </div>
 
-          
-
-          
+          <div className="auth-links">
+            
+            <Link to="/signup" className="signup-btn">
+             Login / Sign Up
+            </Link>
+          </div>
         </div>
       </div>
     </div>
