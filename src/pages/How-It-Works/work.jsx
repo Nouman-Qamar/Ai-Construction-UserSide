@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function HowItWorks() {
 	return (
 		<div style={{padding: '2rem'}}>
