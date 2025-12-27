@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Modul.css';
+import './modul.css';
 
 const Modal = ({ isOpen, onClose, role }) => {
   if (!isOpen) return null;
