@@ -10,6 +10,7 @@ import Signup from "./Pages/Signup/signup.jsx";
 import About from "./Pages/About/about.jsx";
 import Work from "./Pages/How-It-Works/work.jsx";
 import Home from "./Pages/Home/home.jsx";
+import Services from "./Pages/Servicee/Services.jsx";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           {<Route path="/signup"element={<Signup/>}/>}
           {<Route path="/about"element={< About/>}/>}
           {<Route path="/how-it-works"element={< Work/>}/>}
+           {<Route path="/services"element={< Services/>}/>}
            {<Route path="/home"element={< Home/>}/>}
           {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
