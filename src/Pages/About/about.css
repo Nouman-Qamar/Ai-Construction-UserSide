@@ -1,0 +1,624 @@
+/* ============================================
+   GENERAL STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+.about-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   NAVBAR STYLES
+   ============================================ */
+
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo-icon {
+  color: #ff9500;
+}
+
+.logo-text {
+  color: #333;
+}
+
+.logo-text span {
+  color: #ff9500;
+}
+
+/* Menu Links */
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #ff9500;
+}
+
+.nav-link.active {
+  color: #ff9500;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff9500;
+}
+
+/* Right Side */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-login {
+  background: none;
+  border: none;
+  color: #666;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-login:hover {
+  color: #ff9500;
+}
+
+.nav-cta {
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background-color: #e68600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* ============================================
+   MISSION & VISION SECTION
+   ============================================ */
+
+.mission-vision-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.mission-vision-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.orange-bg {
+  background-color: #ffe5cc;
+}
+
+.blue-bg {
+  background-color: #cce7ff;
+}
+
+.white-icon {
+  color: white;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   STATISTICS SECTION
+   ============================================ */
+
+.stats-section {
+  background: linear-gradient(135deg, #ff9500 0%, #9d4edd 50%, #3a86ff 100%);
+  padding: 60px 0;
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ============================================
+   STORY SECTION
+   ============================================ */
+
+.story-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.story-container {
+  max-width: 900px;
+}
+
+.story-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.story-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.story-paragraph {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+
+.team-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.team-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.team-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.team-card-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* 
+   CALL TO ACTION SECTION
+  */
+
+.cta-section {
+  background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+  padding: 80px 0;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.cta-line {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.9rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #ff9500;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e68600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #ff9500;
+  border-color: #ff9500;
+}
+
+.btn-secondary:hover {
+  background-color: #fff5f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.2);
+}
+
+/* 
+   RESPONSIVE STYLES
+   */
+
+/* Tablet */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.75rem 20px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Sections */
+  .mission-vision-section,
+  .story-section,
+  .team-section,
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  /* Story */
+  .story-heading {
+    font-size: 2rem;
+  }
+
+  .story-card {
+    padding: 2rem;
+  }
+
+  /* Team */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* CTA */
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  /* Stats */
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Navbar */
+  .navbar-content {
+    padding: 0.75rem 15px;
+  }
+
+  .navbar-logo {
+    gap: 8px;
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Sections */
+  .mission-vision-section,
+  .story-section,
+  .team-section,
+  .cta-section {
+    padding: 40px 0;
+  }
+
+  .mission-vision-grid,
+  .team-grid {
+    gap: 1.5rem;
+  }
+
+  .mission-vision-card,
+  .team-card {
+    padding: 1.5rem;
+  }
+
+  /* Story */
+  .story-heading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .story-card {
+    padding: 1.5rem;
+  }
+
+  .story-paragraph {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  /* Team */
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* CTA */
+  .cta-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-line {
+    font-size: 0.95rem;
+  }
+
+  .cta-buttons {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  /* Icon Containers */
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+  }
+
+  .team-card-title {
+    font-size: 1.1rem;
+  }
+
+  .team-card-text {
+    font-size: 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,37 @@
+.card-table {
+  border-collapse: collapse;
+}
+
+.card-table th,
+.card-table td {
+  white-space: nowrap;
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.card-table thead th {
+  letter-spacing: 0.2px;
+  font-weight: 600;
+}
+
+.progress-fill {
+  transition: width 0.5s ease;
+  height: 100%;
+  border-radius: 0.25rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  .card-table th,
+  .card-table td {
+    white-space: normal;
+  }
+}
