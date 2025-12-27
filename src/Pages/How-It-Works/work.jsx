@@ -25,7 +25,7 @@ export default function HowItWorks() {
       title: "Choose Your Role",
       description:
         "Select whether you're a Client, Contractor, or Labour member joining our platform.",
-      icon: AimOutlined, // ✅ FIXED (TargetOutlined ❌)
+      icon: AimOutlined, 
       details: "Define your position",
       color: "#2563eb",
     },
@@ -90,7 +90,7 @@ export default function HowItWorks() {
 
   return (
     <main className="how-it-works-container">
-      {/* Hero Section */}
+      
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">How BuildFlow Works</h1>
@@ -102,7 +102,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* Steps Section */}
+     
       <section className="steps-section">
         <div className="steps-header">
           <h2 className="steps-title">Our Simple 4-Step Process</h2>
@@ -167,7 +167,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* Roles Section */}
+     
       <section className="roles-section">
         <div className="roles-header">
           <h2 className="roles-title">Tailored Experience for Every Role</h2>
