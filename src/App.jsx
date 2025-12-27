@@ -31,9 +31,10 @@ function App() {
           {<Route path="/how-it-works"element={< Work/>}/>}
            {<Route path="/services"element={< Services/>}/>}
            {<Route path="/"element={< Home/>}/>}
+           {/* <Route path="/form" element={<FormFields />} /> */}
           {/* <Route path="/" element={<FormFields />} />
           <Route path="/" element={<FormFields />} />
-          <Route path="/" element={<FormFields />} />
+          <Route path="/" element={<FormFields />} />i 
           <Route path="/" element={<FormFields />} /> */}
 
                               {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka denaa*/}
