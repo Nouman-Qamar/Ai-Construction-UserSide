@@ -1,0 +1,185 @@
+/* Toolkit Component Styles */
+.toolkit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.toolkit-content {
+  background: white;
+  border-radius: 16px;
+  padding: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ffd9bf;
+}
+
+.toolkit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Headings */
+.toolkit-heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff7a18;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.toolkit-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.toolkit-description {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Progress Checklist */
+.progress-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: linear-gradient(to bottom, #fffbf8, #ffffff);
+  border-radius: 12px;
+  border: 1px solid #ffd9bf;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.checklist-item:hover {
+  background: rgba(255, 122, 24, 0.05);
+}
+
+/* Icon Styles */
+.checklist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.checklist-icon.active {
+  color: #ff7a18;
+}
+
+.checklist-icon.inactive {
+  color: #ccc;
+}
+
+/* Label Styles */
+.checklist-label {
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.checklist-label.active {
+  color: #ff7a18;
+  font-weight: 600;
+}
+
+.checklist-label.inactive {
+  color: #999;
+}
+
+/* Button Container */
+.toolkit-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0 0;
+}
+
+.toolkit-start-btn {
+  padding: 14px 48px;
+  background: linear-gradient(135deg, #ff7a18, #ff9a42);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 122, 24, 0.3);
+  letter-spacing: -0.3px;
+}
+
+.toolkit-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 122, 24, 0.4);
+  background: linear-gradient(135deg, #ff8a28, #ffaa52);
+}
+
+.toolkit-start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 122, 24, 0.3);
+}
+
+@media (max-width: 768px) {
+  .toolkit-container {
+    padding: 20px 16px;
+  }
+
+  .toolkit-content {
+    padding: 40px 24px;
+  }
+
+  .toolkit-heading {
+    font-size: 28px;
+  }
+
+  .toolkit-subheading {
+    font-size: 20px;
+  }
+
+  .progress-checklist {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .toolkit-start-btn {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolkit-content {
+    padding: 24px 16px;
+  }
+
+  .toolkit-heading {
+    font-size: 24px;
+  }
+
+  .toolkit-subheading {
+    font-size: 18px;
+  }
+
+  .progress-checklist {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    padding: 8px;
+  }
+}
