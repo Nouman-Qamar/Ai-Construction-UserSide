@@ -27,29 +27,10 @@ function App() {
           {<Route path="/services" element={<Services />} />}
           <Route path="/jobs" element={<JobList />} />
           <Route path="/jobs/:id" element={<JobDetails />} />
-
           {<Route path="/" element={<Home />} />}
-          {/* <Route path="/form" element={<FormFields />} /> */}
-          {/* <Route path="/" element={<FormFields />} />
-          <Route path="/" element={<FormFields />} />
-          <Route path="/" element={<FormFields />} />i 
-          <Route path="/" element={<FormFields />} /> */}
-
-          {/* Yaha py jsa upper Route ka path dya hwa asy sabny apny pages ka denaa*/}
+          
         </Routes>
       </main>
-
-      {/* yh Button component ha uncomment krka chala kr dekhlo */}
-      {/* <ButtonExamples /> */}
-
-      {/* yh card component ha uncomment krka chala kr dekhlo */}
-      {/* <CardsPage /> */}
-
-      {/* yh Modal component ha uncomment krka chala kr dekhlo */}
-      {/* <Modalmenu /> */}
-
-      {/* yh FormFields component ha uncomment krka chala kr dekhlo */}
-      {/* <FormFields />         */}
 
       <Footer />
     </div>
