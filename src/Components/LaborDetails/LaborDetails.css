@@ -1,0 +1,48 @@
+/* Compact Labor Details styles - reuse utilities where possible */
+.labor-details-container{
+  max-width:1200px;margin:0 auto;padding:var(--spacing-3xl) 20px;
+}
+
+.back-button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;border:2px solid var(--primary-border);background:var(--btn-secondary-bg,white);color:var(--primary-color);cursor:pointer}
+.back-button:hover{background:var(--primary-bg);border-color:var(--primary-color)}
+
+.labor-details-header{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;padding:32px;border:2px solid var(--primary-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);background:white;margin-bottom:24px}
+.labor-header-left{display:flex;gap:20px;align-items:center;flex:1}
+
+.labor-large-icon{font-size:64px;min-width:84px;height:84px;display:flex;align-items:center;justify-content:center;border-radius:12px;border:2px solid var(--primary-border);background:linear-gradient(135deg,var(--primary-bg),#fff)}
+.labor-header-info{display:flex;flex-direction:column}
+.labor-detail-name{font-size:28px;font-weight:700;color:var(--primary-color);margin:0}
+.labor-detail-description{color:var(--text-gray);line-height:1.6;margin-top:6px;max-width:520px}
+
+.labor-rating{display:flex;flex-direction:column;align-items:flex-end}
+.rating-stars{display:flex;align-items:center;gap:8px}
+.star-filled{color:var(--warning-color)}
+.rating-value{font-weight:700;color:var(--text-dark)}
+.rating-reviews{color:var(--text-light);font-size:13px;margin:0}
+
+.labor-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.stat-card{display:flex;gap:12px;align-items:center;padding:16px;border:2px solid var(--primary-border);border-radius:12px;background:white;box-shadow:var(--shadow-sm);transition:var(--transition-fast)}
+.stat-card:hover{border-color:var(--primary-color);transform:translateY(-2px)}
+.stat-icon{font-size:20px;color:var(--primary-color);flex-shrink:0}
+.stat-label{font-size:12px;color:var(--text-light);text-transform:uppercase;margin:0}
+.stat-value{font-weight:700;color:var(--text-dark);margin:0}
+
+.labor-services{padding:20px;border:2px solid var(--primary-border);border-radius:12px;background:white;box-shadow:var(--shadow-sm);margin-bottom:24px}
+.services-title{font-size:18px;font-weight:600;margin:0 0 12px 0}
+.services-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.service-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;color:var(--text-gray)}
+.service-item:hover{background:var(--primary-bg)}
+.service-check{color:var(--primary-color);font-weight:700}
+
+.labor-action{display:flex;justify-content:center;margin-bottom:32px}
+.labor-start-btn{padding:12px 40px;border-radius:10px;background:linear-gradient(135deg,var(--primary-color),var(--primary-light));color:white;border:none;font-weight:700;cursor:pointer;box-shadow:var(--shadow-primary)}
+.labor-start-btn:hover{transform:translateY(-2px)}
+
+@media (max-width:768px){
+  .labor-details-header{flex-direction:column;padding:20px}
+  .labor-large-icon{font-size:56px;min-width:72px;height:72px}
+  .labor-detail-name{font-size:22px}
+  .labor-stats{grid-template-columns:1fr}
+  .services-list{grid-template-columns:1fr}
+  .labor-start-btn{width:100%;padding:12px}
+}

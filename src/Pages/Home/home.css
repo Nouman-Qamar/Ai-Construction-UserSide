@@ -1,10 +1,13 @@
 /* ================= THEME ================= */
 :root {
-  --primary:  #ff7a18;
-  --primary-dark:   #747272;
+  --primary: #ff7a18;
+  --primary-dark: #e66a10;
+  --primary-soft: #fff1e6;
+
   --dark: #0f172a;
   --text: #475569;
   --muted: #64748b;
+
   --bg-light: #f8fafc;
   --radius: 20px;
 }
@@ -36,17 +39,16 @@
 }
 
 .hero-title {
-  font-size: 3rem; 
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .highlight-text {
-  color: #ff7a18;
-  font-size: inherit;   
-  font-weight: inherit; 
+  color: var(--primary);
+  font-size: inherit;
+  font-weight: inherit;
   display: inline-block;
 }
-
 
 .hero-sub {
   font-size: 16px;
@@ -60,11 +62,6 @@
   gap: 16px;
 }
 
-/* h1 span color */
-.highlight-text {
-  color: #ff7a18;
-}
-
 /* p text transition */
 .text-transition {
   transition: all 0.4s ease;
@@ -74,7 +71,6 @@
   color: #555;
   transform: translateY(-2px);
 }
-
 
 /* ================= BUTTONS ================= */
 .btn {
@@ -109,6 +105,10 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: imageFade 1s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .hero-image img {
@@ -122,12 +122,18 @@
 .locations-section {
   padding: 90px 20px;
   background: white;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   text-align: center;
 }
 
 .locations-inner {
   max-width: 900px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .locations-title {
@@ -163,19 +169,6 @@
 .loc-icon {
   font-size: 32px;
 }
-.locations-section {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.locations-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
 
 /* ================= FEATURES ================= */
 .features-section {
@@ -278,13 +271,6 @@
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.45s; }
 .delay-3 { animation-delay: 0.7s; }
-
-.hero-image {
-  opacity: 0;
-  transform: translateX(40px);
-  animation: imageFade 1s ease forwards;
-  animation-delay: 0.6s;
-}
 
 @keyframes fadeUp {
   to {
