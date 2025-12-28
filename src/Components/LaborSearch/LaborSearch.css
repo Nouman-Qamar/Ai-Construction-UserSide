@@ -1,0 +1,216 @@
+/* Labor Search Component Styles */
+.labor-search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.labor-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 2px solid #ffd9bf;
+  border-radius: 8px;
+  color: #ff7a18;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 30px;
+  font-family: inherit;
+}
+
+.labor-back-button:hover {
+  background: #fff7f0;
+  border-color: #ff7a18;
+}
+
+.labor-search-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.labor-search-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff7a18;
+  margin: 0 0 8px 0;
+}
+
+.labor-search-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Search Wrapper */
+.labor-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  background: white;
+  border: 2px solid #ffd9bf;
+  border-radius: 12px;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.labor-search-wrapper:focus-within {
+  border-color: #ff7a18;
+  box-shadow: 0 4px 12px rgba(255, 122, 24, 0.1);
+}
+
+.search-icon {
+  color: #999;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.labor-search-input {
+  flex: 1;
+  padding: 16px 0;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+}
+
+.labor-search-input::placeholder {
+  color: #999;
+}
+
+/* Labor Cards Grid */
+.labor-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.labor-card {
+  background: white;
+  border: 2px solid #ffd9bf;
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.labor-card:hover {
+  border-color: #ff7a18;
+  box-shadow: 0 6px 16px rgba(255, 122, 24, 0.15);
+  transform: translateY(-4px);
+}
+
+.labor-card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.labor-icon {
+  font-size: 48px;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff7f0, #fffbf8);
+  border-radius: 12px;
+  border: 2px solid #ffd9bf;
+}
+
+.labor-info {
+  flex: 1;
+}
+
+.labor-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.labor-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.labor-workers {
+  font-size: 12px;
+  color: #ff7a18;
+  font-weight: 500;
+}
+
+.labor-arrow {
+  color: #ff7a18;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.labor-card:hover .labor-arrow {
+  transform: translateX(4px);
+}
+
+/* No Results Message */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff7f0, #fffbf8);
+  border: 2px dashed #ffd9bf;
+  border-radius: 12px;
+}
+
+.no-results p {
+  font-size: 18px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.no-results-hint {
+  font-size: 14px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .labor-search-container {
+    padding: 24px 16px;
+  }
+
+  .labor-search-header h2 {
+    font-size: 24px;
+  }
+
+  .labor-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .labor-card-content {
+    gap: 16px;
+  }
+
+  .labor-icon {
+    font-size: 36px;
+    min-width: 50px;
+    height: 50px;
+  }
+
+  .labor-name {
+    font-size: 18px;
+  }
+}
