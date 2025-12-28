@@ -1,43 +1,85 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./home.css";
+
+/* ================= ANIMATION VARIANTS ================= */
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const hoverCard = {
+  hover: {
+    y: -8,
+    scale: 1.03,
+    transition: { type: "spring", stiffness: 300 }
+  }
+};
 
 function Home() {
   return (
     <div className="home-page">
 
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO ================= */}
       <section className="hero">
-        <div className="hero-inner new-hero">
-          <div className="hero-content">
+        <div className="hero-inner hero-split">
 
-            <h1 className="hero-title">
-              Find Trusted Craftsmen <br /> for Any Job
-            </h1>
+          <motion.div
+            className="hero-content"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
+        <h1 className="hero-title">
+  Find Trusted <span className="highlight-text">Craftsmen</span><br /> for Any Job
+</h1>
 
-            <p className="hero-sub">
-              Connect with verified painters, plumbers, electricians,
-              and more in your area. Quality work, reliable service,
-              competitive pricing.
-            </p>
+
+<p className="hero-sub text-transition">
+  Connect with verified painters, plumbers, electricians,
+  and more in your area.
+</p>
+
 
             <div className="hero-ctas">
-              <Link to="/post-job" className="btn primary">
-                Get Started →
-              </Link>
-              <Link to="/signup" className="btn outline">
-                Login
-              </Link>
+              <Link to="/post-job" className="btn primary">Get Started →</Link>
+              <Link to="/signup" className="btn outline">Login</Link>
             </div>
+          </motion.div>
 
-          </div>
+          <motion.div
+            className="hero-image"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img src="/card5.png" alt="Professional Tradesman" />
+          </motion.div>
+
         </div>
       </section>
 
-      {/* ================= LOCATIONS SECTION ================= */}
-      <section className="locations-section">
+      {/* ================= LOCATIONS ================= */}
+      <motion.section
+        className="locations-section"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <div className="locations-inner">
-
           <span className="badge">Location-Based Projects</span>
 
           <h2 className="locations-title">
@@ -45,104 +87,127 @@ function Home() {
           </h2>
 
           <p className="locations-sub">
-            Sign up to explore active construction projects and job
-            opportunities near you.
+            Sign up to explore active projects near you.
           </p>
 
-          <div className="locations-card-wrapper">
-            <div className="locations-card">
-              <div className="loc-icon">🔒</div>
+          <motion.div
+            className="locations-card"
+            whileHover="hover"
+            variants={hoverCard}
+          >
+            <div className="loc-icon">🔒</div>
+            <h3>Unlock Project Locations</h3>
+            <p className="muted small">
+              Login or register to view nearby opportunities.
+            </p>
 
-              <h3>Unlock Project Locations</h3>
+            <Link to="/signup" className="btn primary">
+              Sign Up to Explore Projects
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
 
-              <p className="muted small">
-                Login or register to view project details, locations,
-                and connect with construction opportunities in your area.
-              </p>
+      {/* ================= FEATURES ================= */}
+      <motion.section
+        className="features-section"
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="features-grid">
+          {[
+            { icon: "✔", title: "Verified Professionals" },
+            { icon: "💰", title: "Transparent Pricing" },
+            { icon: "⭐", title: "Quality Guarantee" },
+            { icon: "🕘", title: "24/7 Support" }
+          ].map((f, i) => (
+            <motion.div
+              key={i}
+              className="feature-card"
+              variants={fadeUp}
+              whileHover="hover"
+              {...hoverCard}
+            >
+              <div className="feature-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
-              <Link to="/signup" className="btn primary">
-                Sign Up to Explore Projects
-              </Link>
+      {/* ================= CTA ================= */}
+      <motion.section
+        className="hero"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="hero-inner hero-split">
 
-              <p className="tiny muted">
-                Free to join • No credit card required
-              </p>
-            </div>
+          <div className="hero-content">
+            <h1 className="hero-title">Looking for Jobs?</h1>
+            <p className="hero-sub">
+              Grow your business with <strong>Vi Maak Dat</strong>
+            </p>
+
+            <Link to="/signup" className="btn primary">
+              Become A Constructor
+            </Link>
           </div>
 
+          <motion.div
+            className="hero-image"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+          >
+            <img src="/card4.png" alt="Tradesman" />
+          </motion.div>
+
         </div>
-      </section>
+      </motion.section>
 
-      {/* ================= FEATURES SECTION ================= */}
-      <section className="features-section">
-        <div className="features-inner">
-          <div className="features-grid">
+      {/* ================= STEPS SECTION ================= */}
+      <section className="steps-section">
+        <div className="steps-inner">
 
-            <div className="feature-card">
-              <div className="feature-icon">✔</div>
-              <h3>Verified Professionals</h3>
-              <p>All craftsmen are background-checked and verified for your safety.</p>
+          <h2 className="steps-title">
+            Get Things Done in 3 Easy Steps
+          </h2>
+
+          <p className="steps-sub">
+            We make it simple for you to find the right help fast.
+            Post a job, connect with professionals, and get quality work done.
+          </p>
+
+          <div className="steps-grid">
+
+            <div className="step-card">
+              <img src="/card1.png" alt="Post Job" className="step-img" />
+              <h3>Post Your Job</h3>
+              <p>Tell us what you need done. It takes only a few minutes.</p>
             </div>
 
-            <div className="feature-card">
-              <div className="feature-icon">💰</div>
-              <h3>Transparent Pricing</h3>
-              <p>Get multiple quotes and compare prices before you commit.</p>
+            <div className="step-card">
+              <img src="/card2.png" alt="Get Matched" className="step-img" />
+              <h3>Get Matched</h3>
+              <p>Receive offers from verified professionals near you.</p>
             </div>
 
-            <div className="feature-card active">
-              <div className="feature-icon">⭐</div>
-              <h3>Quality Guarantee</h3>
-              <p>Work is backed by our satisfaction guarantee policy.</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">🕘</div>
-              <h3>24/7 Support</h3>
-              <p>Our customer service team is always ready to help you.</p>
+            <div className="step-card">
+              <img src="/card3.png" alt="Get It Done" className="step-img" />
+              <h3>Get It Done</h3>
+              <p>Choose the best tradesman and get the job done confidently.</p>
             </div>
 
           </div>
         </div>
       </section>
-{/* ================= STEPS SECTION ================= */}
-<section className="steps-section">
-  <div className="steps-inner">
-
-    <h2 className="steps-title">
-      Get Things Done in 3 Easy Steps
-    </h2>
-
-    <p className="steps-sub">
-      We make it simple for you to find the right help fast.
-      Post a job, connect with professionals, and get quality work done.
-    </p>
-
-    <div className="steps-grid">
-
-      <div className="step-card">
-        <img src="/card1.png.png" alt="Post Job" className="step-img" />
-        <h3>Post Your Job</h3>
-        <p>Tell us what you need done. It takes only a few minutes.</p>
-      </div>
-
-      <div className="step-card">
-        <img src="/card2.png.png" alt="Get Matched" className="step-img" />
-        <h3>Get Matched</h3>
-        <p>Receive offers from verified professionals near you.</p>
-      </div>
-
-      <div className="step-card">
-        <img src="/card3.png.png" alt="Get It Done" className="step-img" />
-        <h3>Get It Done</h3>
-        <p>Choose the best tradesman and get the job done confidently.</p>
-      </div>
 
     </div>
-  </div>
-</section>
-	</div>
-	);
+  );
 }
 
 export default Home;
