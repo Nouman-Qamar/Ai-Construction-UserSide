@@ -31,15 +31,7 @@ const Signup = () => {
             <h2 className="signup-title">Create Account</h2>
             <p className="signup-subtitle">Register to get started</p>
 
-            <Radio.Group
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              className="role-group"
-            >
-              <Radio.Button value="contractor">Contractor</Radio.Button>
-              <Radio.Button value="labourer">Labourer</Radio.Button>
-              <Radio.Button value="client">Client</Radio.Button>
-            </Radio.Group>
+           
 
             <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
@@ -143,7 +135,7 @@ const Signup = () => {
             </Form>
 
             <p className="signup-link">
-              Already have an account? <Link to="/login">Login here</Link>
+              Already have an account? <Link to="/login-as">Login here</Link>
             </p>
           </Card>
         </div>

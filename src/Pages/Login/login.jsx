@@ -60,21 +60,7 @@ const Login = () => {
               Sign in to continue
             </p>
 
-            <Radio.Group
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              className="role-group"
-            >
-              <Radio.Button value="contractor">
-                Contractor
-              </Radio.Button>
-              <Radio.Button value="labourer">
-                Labourer
-              </Radio.Button>
-              <Radio.Button value="client">
-                Client
-              </Radio.Button>
-            </Radio.Group>
+           
 
             <Form
               layout="vertical"

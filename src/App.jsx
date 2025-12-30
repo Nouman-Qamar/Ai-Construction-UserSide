@@ -13,6 +13,10 @@ import Home from "./Pages/Home/home.jsx";
 import Services from "./Pages/Services/Services.jsx";
 import JobList from "./Pages/Project/joblist.jsx";
 import JobDetails from "./Pages/Project/JobDetails.jsx";
+import LaborDetails from "./Components/LaborDetails/LaborDetails.jsx";
+import LaborSearch from "./Components/LaborSearch/LaborSearch.jsx";
+import PostJobFlow from "./Components/PostJobFlow/PostJobFlow.jsx";
+import LoginAs from "./Pages/Login/selectlogin.jsx";
 
 function App() {
   return (
@@ -25,10 +29,13 @@ function App() {
           {<Route path="/about" element={<About />} />}
           {<Route path="/how-it-works" element={<Work />} />}
           {<Route path="/services" element={<Services />} />}
+          {<Route path="/" element={<Home />} />}
           <Route path="/jobs" element={<JobList />} />
           <Route path="/jobs/:id" element={<JobDetails />} />
-          {<Route path="/" element={<Home />} />}
-          
+          {<Route path="/labor-details" element={<LaborDetails />} />}
+          <Route path="/labour-search" element={<LaborSearch />} />
+          {<Route path="/post-job-flow" element={<PostJobFlow />} />}
+          {<Route path="/login-as" element={<LoginAs />} />}
         </Routes>
       </main>
 

@@ -54,8 +54,8 @@ function Home() {
 
 
             <div className="hero-ctas">
-              <Link to="/post-job" className="btn primary">Get Started →</Link>
-              <Link to="/signup" className="btn outline">Login</Link>
+              <Link to="/labour-search" className="btn primary">Post A Job→</Link>
+              <Link to="/login-as" className="btn outline">I'm a contractor</Link>
             </div>
           </motion.div>
 
