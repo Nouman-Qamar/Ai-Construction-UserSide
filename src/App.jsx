@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar.jsx";
-import Footer from "./Components/Footer/Footer.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import FormFields from "./Components/FormField/FormFields.jsx";
 import { ButtonExamples } from "./Components/Button/Button.jsx";
 import CardsPage from "./Components/Cardpage/Cardpage.jsx";
@@ -13,9 +13,9 @@ import Home from "./Pages/Home/home.jsx";
 import Services from "./Pages/Services/Services.jsx";
 import JobList from "./Pages/Project/joblist.jsx";
 import JobDetails from "./Pages/Project/JobDetails.jsx";
-import LaborDetails from "./Components/LaborDetails/LaborDetails.jsx";
-import LaborSearch from "./Components/LaborSearch/LaborSearch.jsx";
-import PostJobFlow from "./Components/PostJobFlow/PostJobFlow.jsx";
+import LaborDetails from "./components/LaborDetails/LaborDetails.jsx";
+import LaborSearch from "./components/LaborSearch/LaborSearch.jsx";
+import PostJobFlow from "./components/PostJobFlow/PostJobFlow.jsx";
 import LoginAs from "./Pages/Login/selectlogin.jsx";
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
           <Route path="/labour-search" element={<LaborSearch />} />
           {<Route path="/post-job-flow" element={<PostJobFlow />} />}
           {<Route path="/login-as" element={<LoginAs />} />}
+          
         </Routes>
       </main>
 
