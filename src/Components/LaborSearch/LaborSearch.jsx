@@ -70,7 +70,7 @@ export default function LaborSearch({ onSelectLabor, onBack }) {
         <p>Select a trade category to get started</p>
       </div>
 
-      {/* Search Bar */}
+      
       <div className="labor-search-wrapper">
         <Search className="search-icon" size={20} />
         <input
@@ -90,7 +90,7 @@ export default function LaborSearch({ onSelectLabor, onBack }) {
         />
       </div>
 
-      {/* Labor Cards Grid */}
+      
       <div className="labor-cards-grid">
         {filteredLabors.length > 0 ? (
           filteredLabors.map((labor) => (
