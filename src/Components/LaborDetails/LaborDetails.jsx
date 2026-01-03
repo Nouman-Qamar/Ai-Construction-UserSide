@@ -1,85 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowLeft, Star, Users } from "lucide-react";
 import "./LaborDetails.css";
 import FormField from "../FormField/FormField";
+import laborDetails from "./laborsData";
 
 export default function LaborDetails({ labor, onBack }) {
   const navigate = useNavigate();
   const [showLocationForm, setShowLocationForm] = useState(false);
+  const location = useLocation();
+  const selectedLabor = labor || location.state?.labor;
 
-  const laborDetails = {
-    1: {
-      name: "Plumbing",
-      icon: "🔧",
-      description: "Professional plumbing services for residential and commercial projects",
-      rating: 4.8,
-      reviews: 234,
-      workers: 45,
-      avgCost: "$50-150 per hour",
-      experience: "10+ years avg experience",
-      details: [
-        "Pipe installation",
-        "Leak detection and repair",
-        "Water heater services",
-        "Drain cleaning",
-        "Faucet installation",
-      ],
-    },
-    2: {
-      name: "Electrical",
-      icon: "⚡",
-      description: "Expert electrical installation and maintenance services",
-      rating: 4.9,
-      reviews: 189,
-      workers: 38,
-      avgCost: "$60-200 per hour",
-      experience: "12+ years avg experience",
-      details: [
-        "Wiring installation",
-        "Circuit breaker replacement",
-        "Outlet installation",
-        "Panel upgrades",
-        "Troubleshooting",
-      ],
-    },
-    3: {
-      name: "Carpentry",
-      icon: "🪚",
-      description: "Quality carpentry work for structural and decorative projects",
-      rating: 4.7,
-      reviews: 267,
-      workers: 52,
-      avgCost: "$45-180 per hour",
-      experience: "15+ years avg experience",
-      details: [
-        "Frame construction",
-        "Cabinet building",
-        "Door installation",
-        "Deck building",
-        "Finish work",
-      ],
-    },
-    4: {
-      name: "Masonry",
-      icon: "🧱",
-      description: "Professional masonry and stonework services",
-      rating: 4.6,
-      reviews: 156,
-      workers: 41,
-      avgCost: "$40-120 per hour",
-      experience: "8+ years avg experience",
-      details: [
-        "Brick laying",
-        "Stone work",
-        "Concrete placement",
-        "Wall construction",
-        "Repairs",
-      ],
-    },
-  };
+  
 
-  const details = laborDetails[labor?.id] || laborDetails[1];
+  const details = laborDetails[selectedLabor?.id] || laborDetails[1];
 
   const handleStart = () => {
     setShowLocationForm(true);
@@ -88,7 +22,7 @@ export default function LaborDetails({ labor, onBack }) {
   const handleLocationSubmit = (locationData) => {
     navigate("/services", {
       state: {
-        selectedLabor: labor,
+        selectedLabor: selectedLabor,
         location: locationData,
       },
     });
