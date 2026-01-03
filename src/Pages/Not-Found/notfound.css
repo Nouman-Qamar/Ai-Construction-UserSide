@@ -1,0 +1,65 @@
+.notfound-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #f5f7fa; /* light AntD-like background */
+}
+
+.notfound-content {
+  text-align: center;
+  max-width: 480px;
+  background: #ffffff;
+  padding: 40px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.notfound-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+}
+
+.notfound-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.notfound-description {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notfound-title {
+    font-size: 28px;
+  }
+
+  .notfound-icon {
+    font-size: 64px;
+  }
+}
+
+/* Theme Button Customization */
+.theme-primary-btn.ant-btn-primary {
+  background-color: #ff9a3c;
+  border-color: #ff9a3c;
+  font-weight: 600;
+}
+
+.theme-primary-btn.ant-btn-primary:hover,
+.theme-primary-btn.ant-btn-primary:focus {
+  background-color: #e8892f; /* slightly darker */
+  border-color: #e8892f;
+}
+
+.theme-primary-btn.ant-btn-primary:active {
+  background-color: #d97f28;
+  border-color: #d97f28;
+}
