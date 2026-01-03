@@ -13,6 +13,7 @@ import Home from "./Pages/Home/home.jsx";
 import Services from "./Pages/Services/Services.jsx";
 import LaborDetails from "./Components/LaborDetails/LaborDetails.jsx";
 import LaborSearch from "./Components/LaborSearch/LaborSearch.jsx";
+import LabourPage from "./Pages/Labour/labour.jsx";
 import PostJobFlow from "./Components/PostJobFlow/PostJobFlow.jsx";
 import LoginAs from "./Pages/Login/selectlogin.jsx";
 import NotFound from "./Pages/Not-Found/notfound.jsx";
@@ -32,7 +33,9 @@ function App() {
           {<Route path="/services" element={<Services />} />}
           {<Route path="/" element={<Home />} />}
           {<Route path="/jobs" element={<Projects />} />}
-          {<Route path="/labor-details" element={<LaborDetails />} />}
+          {<Route path="/labor-details/:id" element={<LaborDetails />} />}
+          {<Route path="/labour-details/:id" element={<LaborDetails />} />}
+          <Route path="/labour" element={<LabourPage />} />
           <Route path="/labour-search" element={<LaborSearch />} />
           {<Route path="/post-job-flow" element={<PostJobFlow />} />}
           {<Route path="/login-as" element={<LoginAs />} />}

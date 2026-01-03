@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, ChevronRight, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./LaborSearch.css";
 
 const laborData = [
@@ -36,6 +37,7 @@ const laborData = [
 export default function LaborSearch({ onSelectLabor, onBack }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredLabors, setFilteredLabors] = useState(laborData);
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
@@ -54,7 +56,11 @@ export default function LaborSearch({ onSelectLabor, onBack }) {
   };
 
   const handleLaborSelect = (labor) => {
-    onSelectLabor(labor);
+    if (onSelectLabor) {
+      onSelectLabor(labor);
+    } else {
+      navigate(`/labour-details/${labor.id}`, { state: { selectedLabor: labor } });
+    }
   };
 
   return (

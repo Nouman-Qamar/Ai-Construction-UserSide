@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { ArrowLeft, Star, Users } from "lucide-react";
 import "./LaborDetails.css";
 import FormField from "../FormField/FormField";
 
 export default function LaborDetails({ labor, onBack }) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const params = useParams();
   const [showLocationForm, setShowLocationForm] = useState(false);
 
   const laborDetails = {
@@ -79,7 +81,9 @@ export default function LaborDetails({ labor, onBack }) {
     },
   };
 
-  const details = laborDetails[labor?.id] || laborDetails[1];
+  const selectedLabor = labor || location.state?.selectedLabor;
+  const laborId = selectedLabor?.id || Number(params.id) || 1;
+  const details = laborDetails[laborId] || laborDetails[1];
 
   const handleStart = () => {
     setShowLocationForm(true);
@@ -134,7 +138,7 @@ export default function LaborDetails({ labor, onBack }) {
   return (
     <div className="labor-details-container">
       {/* Back Button */}
-      <button className="back-button" onClick={onBack}>
+      <button className="back-button" onClick={onBack || (() => navigate(-1))}>
         <ArrowLeft size={20} />
         Back
       </button>

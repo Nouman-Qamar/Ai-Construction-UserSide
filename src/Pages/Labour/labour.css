@@ -1,0 +1,41 @@
+.labour-page-container{
+  display:flex;
+  gap:24px;
+  padding:24px;
+  box-sizing:border-box;
+}
+
+.labour-search-column{
+  flex:0 0 380px;
+  max-width:380px;
+  min-width:280px;
+  height:calc(100vh - 160px);
+  overflow:auto;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  padding:16px;
+}
+
+.labour-details-column{
+  flex:1 1 auto;
+  min-width:300px;
+  height:calc(100vh - 160px);
+  overflow:auto;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  padding:20px;
+}
+
+@media (max-width:900px){
+  .labour-page-container{
+    flex-direction:column;
+  }
+
+  .labour-search-column, .labour-details-column{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+}
