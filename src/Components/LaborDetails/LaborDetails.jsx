@@ -8,6 +8,7 @@ import laborDetails from "./laborsData";
 export default function LaborDetails({ labor, onBack }) {
   const navigate = useNavigate();
   const [showLocationForm, setShowLocationForm] = useState(false);
+  const [selectedRelated, setSelectedRelated] = useState([]);
   const location = useLocation();
   const selectedLabor = labor || location.state?.labor;
 
@@ -23,9 +24,18 @@ export default function LaborDetails({ labor, onBack }) {
     navigate("/services", {
       state: {
         selectedLabor: selectedLabor,
+        relatedLabors: selectedRelated,
         location: locationData,
       },
     });
+  };
+
+  const toggleRelatedService = (serviceId) => {
+    setSelectedRelated((prev) =>
+      prev.includes(serviceId)
+        ? prev.filter((id) => id !== serviceId)
+        : [...prev, serviceId]
+    );
   };
 
   if (showLocationForm) {
@@ -132,6 +142,41 @@ export default function LaborDetails({ labor, onBack }) {
           ))}
         </ul>
       </div>
+
+      {/* Related Services */}
+      {details.relatedServices && details.relatedServices.length > 0 && (
+        <div className="related-services">
+          <h3 className="related-services-title">Often Used With</h3>
+          <div className="related-services-grid">
+            {details.relatedServices.map((serviceId) => {
+              const relatedService = laborDetails[serviceId];
+              return (
+                <div
+                  key={serviceId}
+                  className={`related-service-card ${
+                    selectedRelated.includes(serviceId) ? "selected" : ""
+                  }`}
+                  onClick={() => toggleRelatedService(serviceId)}
+                >
+                  <div className="related-service-icon">{relatedService.icon}</div>
+                  <div className="related-service-info">
+                    <h4 className="related-service-name">{relatedService.name}</h4>
+                    <p className="related-service-rating">
+                      ⭐ {relatedService.rating} ({relatedService.reviews})
+                    </p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={selectedRelated.includes(serviceId)}
+                    onChange={() => toggleRelatedService(serviceId)}
+                    className="related-service-checkbox"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Start Button */}
       <div className="labor-action">

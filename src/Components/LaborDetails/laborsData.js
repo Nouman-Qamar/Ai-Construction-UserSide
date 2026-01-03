@@ -15,6 +15,7 @@ const laborDetails = {
       "Drain cleaning",
       "Faucet installation",
     ],
+    relatedServices: [2, 3],
   },
   2: {
     name: "Electrical",
@@ -32,6 +33,7 @@ const laborDetails = {
       "Panel upgrades",
       "Troubleshooting",
     ],
+    relatedServices: [1, 3, 4],
   },
   3: {
     name: "Carpentry",
@@ -49,6 +51,7 @@ const laborDetails = {
       "Deck building",
       "Finish work",
     ],
+    relatedServices: [1, 2, 4],
   },
   4: {
     name: "Masonry",
@@ -66,6 +69,7 @@ const laborDetails = {
       "Wall construction",
       "Repairs",
     ],
+    relatedServices: [2, 3],
   },
 };
 
