@@ -5,7 +5,6 @@ import "./Services.css";
 import Modal from "./module";
 
 const servicesConfig = {
-  pageTitle: "Our Services",
   pageSubtitle: "Choose the path that fits you best",
   sections: [
     {
@@ -15,7 +14,7 @@ const servicesConfig = {
       title: "Hire Trusted Contractors",
       bullets: ["Verified professionals", "Transparent pricing", "Project tracking"],
       ctaText: "Explore Clients",
-      route: "/clients"
+      route: "/services/client"          // ✅ LINK FIXED
     },
     {
       id: 2,
@@ -24,7 +23,7 @@ const servicesConfig = {
       title: "Find New Projects",
       bullets: ["Daily new leads", "Direct clients", "Secure payments"],
       ctaText: "Explore Contractors",
-      route: "/contractors"
+      route: "/services/contractor"      // ✅ LINK FIXED
     },
     {
       id: 3,
@@ -33,7 +32,7 @@ const servicesConfig = {
       title: "Get Daily Work",
       bullets: ["Nearby jobs", "Quick hiring", "Fast payments"],
       ctaText: "Explore Labour",
-      route: "/labour"
+      route: "/services/labour"          // ✅ LINK FIXED
     }
   ]
 };
@@ -65,7 +64,6 @@ export default function Services() {
         transition={{ duration: 0.6 }}
       >
         <div className="svc-hero-inner">
-          <p className="svc-kicker">{servicesConfig.pageTitle}</p>
           <h1 className="svc-title">{servicesConfig.pageSubtitle}</h1>
         </div>
       </motion.section>
@@ -107,8 +105,10 @@ export default function Services() {
                 <div className="svc-card-actions">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
-                    className={`svc-btn ${s.tone === "blue" ? "svc-btn-blue" : "svc-btn-orange"}`}
-                    onClick={() => navigate(s.route)}
+                    className={`svc-btn ${
+                      s.tone === "blue" ? "svc-btn-blue" : "svc-btn-orange"
+                    }`}
+                    onClick={() => navigate(s.route)}   // ✅ CLICK TO OPEN PAGE
                   >
                     {s.ctaText} →
                   </motion.button>
@@ -131,17 +131,32 @@ export default function Services() {
           <p>Choose your role and discover how BuildFlow can transform your construction experience</p>
 
           <div className="svc-hero-actions">
-            {["Client", "Contractor", "Labour"].map((r) => (
-              <motion.button
-                key={r}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`svc-btn ${r === "Client" ? "svc-btn-solid" : "svc-btn-ghost"}`}
-                onClick={() => openModal(r)}
-              >
-                Sign Up as {r}
-              </motion.button>
-            ))}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="svc-btn svc-btn-solid"
+              onClick={() => navigate("/services/client")}      // ✅ LINKED
+            >
+              Sign Up as Client
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="svc-btn svc-btn-ghost"
+              onClick={() => navigate("/services/contractor")}  // ✅ LINKED
+            >
+              Sign Up as Contractor
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="svc-btn svc-btn-ghost"
+              onClick={() => navigate("/services/labour")}      // ✅ LINKED
+            >
+              Sign Up as Labour
+            </motion.button>
           </div>
         </div>
       </motion.section>

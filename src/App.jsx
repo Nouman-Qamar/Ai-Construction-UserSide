@@ -18,6 +18,12 @@ import LoginAs from "./Pages/Login/selectlogin.jsx";
 import NotFound from "./Pages/Not-Found/notfound.jsx";
 import UserHome from "./Pages/Userhome/userhome.jsx";
 import Projects from "./Pages/Project/job.jsx";
+import Client from "./pages/Services/client";
+import Contractor from "./pages/Services/contractor";
+import Labour from "./pages/Services/labour";
+
+
+
 
 function App() {
   return (
@@ -38,6 +44,9 @@ function App() {
           {<Route path="/login-as" element={<LoginAs />} />}
           {<Route path="/notfound" element={<NotFound />} />}
           <Route path="/userhome" element={<UserHome />} />
+          <Route path="/services/client" element={<Client />} />
+        <Route path="/services/contractor" element={<Contractor />} />
+        <Route path="/services/labour" element={<Labour />} />
         </Routes>
       </main>
 
