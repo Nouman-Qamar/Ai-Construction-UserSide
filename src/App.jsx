@@ -18,25 +18,29 @@ import LoginAs from "./Pages/Login/selectlogin.jsx";
 import NotFound from "./Pages/Not-Found/notfound.jsx";
 import UserHome from "./Pages/Userhome/userhome.jsx";
 import Projects from "./Pages/Project/job.jsx";
+import JobDetails from "./Pages/Project/Detail.jsx";
 
 function App() {
   return (
     <div className="app-layout">
       <Navbar />
       <main className="app-content">
+        {/* 🔧 CHANGED: Fixed route path from /job-details/:id to /projects/:id and removed invalid curly braces */}
         <Routes>
-          {<Route path="/login" element={<Login />} />}
-          {<Route path="/signup" element={<Signup />} />}
-          {<Route path="/about" element={<About />} />}
-          {<Route path="/how-it-works" element={<Work />} />}
-          {<Route path="/services" element={<Services />} />}
-          {<Route path="/" element={<Home />} />}
-          {<Route path="/jobs" element={<Projects />} />}
-          {<Route path="/labor-details" element={<LaborDetails />} />}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-it-works" element={<Work />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/jobs" element={<Projects />} />
+          <Route path="/projects/:id" element={<JobDetails />} />
+
+          <Route path="/labor-details" element={<LaborDetails />} />
           <Route path="/labour-search" element={<LaborSearch />} />
-          {<Route path="/post-job-flow" element={<PostJobFlow />} />}
-          {<Route path="/login-as" element={<LoginAs />} />}
-          {<Route path="/notfound" element={<NotFound />} />}
+          <Route path="/post-job-flow" element={<PostJobFlow />} />
+          <Route path="/login-as" element={<LoginAs />} />
+          <Route path="/notfound" element={<NotFound />} />
           <Route path="/userhome" element={<UserHome />} />
         </Routes>
       </main>
