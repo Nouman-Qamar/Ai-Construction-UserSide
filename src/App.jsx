@@ -19,6 +19,9 @@ import NotFound from "./Pages/Not-Found/notfound.jsx";
 import UserHome from "./Pages/Userhome/userhome.jsx";
 import Projects from "./Pages/Project/job.jsx";
 
+// 🔥 MODIFIED: Import Detail page component for dynamic routing
+import Detail from "./Pages/Project/Detail.jsx"; // ✅ Added for dynamic project details page
+
 function App() {
   return (
     <div className="app-layout">
@@ -38,6 +41,9 @@ function App() {
           {<Route path="/login-as" element={<LoginAs />} />}
           {<Route path="/notfound" element={<NotFound />} />}
           <Route path="/userhome" element={<UserHome />} />
+          {/* 🔥 MODIFIED: Dynamic route for job details */}
+          <Route path="/projects/:id" element={<Detail />} />{" "}
+          {/* ✅ Dynamic detail page route */}
         </Routes>
       </main>
 

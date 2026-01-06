@@ -1,43 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Card, Tag, Button, Input, Select, Empty, Spin } from "antd";
-import {
-  SearchOutlined,
-  EnvironmentOutlined,
-  DollarOutlined,
-  ClockCircleOutlined,
-} from "@ant-design/icons";
+import { Button, Input, Select, Empty, Spin } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import "./jobs.css";
 
-/* Dummy API */
-const getJobsFromApi = async () =>
-  new Promise((resolve) =>
-    setTimeout(() => {
-      resolve([
-        {
-          id: 1,
-          title: "House Painting",
-          description: "Complete interior and exterior house painting service.",
-          category: "painting",
-          status: "open",
-          location: { city: "Lahore" },
-          budget: { min: 100, max: 200 },
-          bidsCount: 3,
-        },
-        {
-          id: 2,
-          title: "Electrical Wiring",
-          description: "Install new electrical wiring for a residential house.",
-          category: "electrical",
-          status: "in_progress",
-          location: { city: "Karachi" },
-          budget: { min: 80, max: 150 },
-          bidsCount: 5,
-        },
-      ]);
-    }, 800)
-  );
+// 🔥 MODIFIED: Import job data and card components
+import { getAllJobs } from "./jobsData"; // ✅ Import shared job data
+import House from "./House"; // ✅ Import House card component
+import Electrical from "./Electrical"; // ✅ Import Electrical card component
+import "./jobs.css";
 
 export default function Projects() {
   const [jobs, setJobs] = useState([]);
@@ -49,9 +20,11 @@ export default function Projects() {
     loadJobs();
   }, []);
 
+  // 🔥 MODIFIED: Load jobs from shared data source
   const loadJobs = async () => {
     setLoading(true);
-    const data = await getJobsFromApi();
+    // Get jobs from jobsData instead of dummy API
+    const data = getAllJobs();
     setJobs(data);
     setLoading(false);
   };
@@ -66,9 +39,6 @@ export default function Projects() {
     { value: "roofing", label: "Roofing" },
   ];
 
-  const getStatusColor = (status) =>
-    status === "open" ? "green" : status === "in_progress" ? "blue" : "default";
-
   const filteredJobs = jobs.filter((job) => {
     const q = searchQuery.toLowerCase();
     return (
@@ -77,6 +47,35 @@ export default function Projects() {
       (categoryFilter === "all" || job.category === categoryFilter)
     );
   });
+
+  // 🔥 MODIFIED: Function to render appropriate card component based on category
+  const renderJobCard = (job, index) => {
+    let CardComponent = null;
+
+    // ✅ MODIFIED: Route to appropriate card component based on job category
+    if (job.category === "painting") {
+      CardComponent = House;
+    } else if (job.category === "electrical") {
+      CardComponent = Electrical;
+    }
+
+    // Fallback for unknown categories (not currently used)
+    if (!CardComponent) {
+      CardComponent = House;
+    }
+
+    return (
+      <motion.div
+        key={job.id}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.08 }}
+      >
+        {/* ✅ MODIFIED: Pass job data as props to card component */}
+        <CardComponent jobData={job} />
+      </motion.div>
+    );
+  };
 
   return (
     <div className="projects-page">
@@ -90,6 +89,7 @@ export default function Projects() {
             clients today.
           </p>
 
+          {/* 🔥 MODIFIED: Search and filter UI */}
           <div className="filters">
             <Input
               size="large"
@@ -123,44 +123,8 @@ export default function Projects() {
             </Empty>
           ) : (
             <div className="projects-grid">
-              {filteredJobs.map((job, index) => (
-                <motion.div
-                  key={job.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.08 }}
-                >
-                  <Card className="project-card" hoverable>
-                    <div className="card-header">
-                      <Tag color={getStatusColor(job.status)}>
-                        {job.status.replace("_", " ").toUpperCase()}
-                      </Tag>
-                      <span className="category">{job.category}</span>
-                    </div>
-
-                    <h3>{job.title}</h3>
-                    <p className="desc">{job.description}</p>
-
-                    <div className="meta">
-                      <span>
-                        <EnvironmentOutlined /> {job.location.city}
-                      </span>
-                      <span>
-                        <DollarOutlined /> ${job.budget.min} – ${job.budget.max}
-                      </span>
-                      <span>
-                        <ClockCircleOutlined /> {job.bidsCount} bids
-                      </span>
-                    </div>
-
-                    <Link to={`/projects/${job.id}`}>
-                      <Button type="primary" block>
-                        View Details
-                      </Button>
-                    </Link>
-                  </Card>
-                </motion.div>
-              ))}
+              {/* 🔥 MODIFIED: Render card components from job data */}
+              {filteredJobs.map((job, index) => renderJobCard(job, index))}
             </div>
           )}
         </div>
