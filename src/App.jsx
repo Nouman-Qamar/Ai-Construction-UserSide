@@ -16,8 +16,8 @@ import LaborSearch from "./Components/LaborSearch/LaborSearch.jsx";
 import PostJobFlow from "./Components/PostJobFlow/PostJobFlow.jsx";
 import LoginAs from "./Pages/Login/selectlogin.jsx";
 import NotFound from "./Pages/Not-Found/notfound.jsx";
-import UserHome from "./Pages/Userhome/userhome.jsx";
 import Projects from "./Pages/Project/job.jsx";
+import HomePage from "./Pages/Userhome/userhome.jsx";
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
           {<Route path="/post-job-flow" element={<PostJobFlow />} />}
           {<Route path="/login-as" element={<LoginAs />} />}
           {<Route path="/notfound" element={<NotFound />} />}
-          <Route path="/userhome" element={<UserHome />} />
+          <Route path="/userhome" element={<HomePage />} />
         </Routes>
       </main>
 
